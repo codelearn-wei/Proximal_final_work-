@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
+</script>
+<h1 align="center">优化算法大作业</h1>
+<h1 id="%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E6%A1%86%E6%9E%B6">代码结构框架</h1>
+<h2 id="%E5%87%BD%E6%95%B0%E8%8C%83%E6%95%B0%E5%8F%8A%E5%85%AC%E5%BC%8F">函数范数及公式</h2>
+<h3 id="%E8%8C%83%E6%95%B0%E5%85%AC%E5%BC%8F">范数公式</h3>
+<h4 id="l0-%E8%8C%83%E6%95%B0">L0 范数</h4>
+<p>L0 范数表示向量中非零元素的个数。</p>
+<p>$$
+|x|_0 = \text{number of non-zero entries in } x
+$$</p>
+<h4 id="l1-%E8%8C%83%E6%95%B0">L1 范数</h4>
+<p>L1 范数是向量元素绝对值之和。</p>
+<p>$$
+|x|<em>1 = \sum</em>{i=1}^n |x_i|
+$$</p>
+<h4 id="l2-%E8%8C%83%E6%95%B0">L2 范数</h4>
+<p>L2 范数或欧几里得范数是向量元素平方和的平方根。</p>
+<p>$$
+|x|<em>2 = \sqrt{\sum</em>{i=1}^n x_i^2}
+$$</p>
+<h3 id="%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E7%9A%84%E5%85%AC%E5%BC%8F">优化问题的公式</h3>
+<h4 id="%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E9%97%AE%E9%A2%98">最小二乘问题</h4>
+<p>最小二乘问题通常用于回归分析，目标是最小化预测值与实际值之间差的平方和。</p>
+<p>$$
+f(x) = \frac{1}{2} |Ax - b|^2
+$$</p>
+<h4 id="%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92">逻辑回归</h4>
+<p>逻辑回归用于二分类问题，目标是最小化逻辑损失，通常用交叉熵表示。</p>
+<p>$$
+f(x) = \frac{1}{m} \sum_{i=1}^m \log(1 + \exp(-y_i (a_i^T x)))
+$$
+其中 (y_i) 是实例 (i) 的类标签，(a_i) 是实例 (i) 的特征向量。</p>
+<h3 id="%E6%AD%A5%E9%95%BF%E9%80%89%E6%8B%A9%E7%AD%96%E7%95%A5">步长选择策略</h3>
+<h4 id="armijo-%E6%AD%A5%E9%95%BF%E7%AD%96%E7%95%A5">Armijo 步长策略</h4>
+<p>Armijo步长策略，也称为回溯线搜索，通过逐步缩小步长，直到满足一定条件。</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Armijo伪代码</span>
+initialize t = <span class="hljs-number">1</span>, beta &lt; <span class="hljs-number">1</span>, alpha &gt; <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> f(x + t * delta_x) &gt; f(x) + alpha * t * gradient(f)(x)^T * delta_x:
+    t = beta * t
+</div></code></pre>
+<h4 id="bb-%E6%AD%A5%E9%95%BF%E7%AD%96%E7%95%A5">BB 步长策略</h4>
+<p>BB步长策略，也称为Barzilai-Borwein步长策略，通过考虑两次迭代间解的变化来自适应调整步长。该方法基于简单的梯度信息来估算有效的步长，通常可以加快收敛速度，尤其是在处理大规模优化问题时。
+python</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># BB伪代码</span>
+<span class="hljs-keyword">if</span> first_iteration:
+    t = initial_step_size  <span class="hljs-comment"># 初始步长</span>
+<span class="hljs-keyword">else</span>:
+    s = x_new - x_old  <span class="hljs-comment"># x的差异</span>
+    y = grad(x_new) - grad(x_old)  <span class="hljs-comment"># 梯度的差异</span>
+    t = (s^T * s) / (s^T * y)  <span class="hljs-comment"># 更新步长，利用梯度变化和解变化的比例</span>
+</div></code></pre>
+<h2 id="%E9%A1%B9%E7%9B%AE%E6%8F%8F%E8%BF%B0">项目描述</h2>
+<p>本项目旨在开发一个软件包，解决复合优化问题：</p>
+<p>$$
+\min_x {f(x) + h(x)}
+$$</p>
+<p>其中 (f(x)) 是一个可微分函数，(h(x)) 是一个可以轻松计算近邻算子的函数。本项目特别关注使用梯度方法和适当的步长选择策略进行迭代更新。</p>
+<h3 id="%E8%BF%AD%E4%BB%A3%E6%9B%B4%E6%96%B0%E5%85%AC%E5%BC%8F">迭代更新公式</h3>
+<p>更新使用的公式为：</p>
+<p>$$
+x_{k+1} = \text{prox}_{h}(x_k - t_k \nabla f(x_k))
+$$</p>
+<p>这里，(t_k) 是每次迭代中选择的步长，根据不同的策略进行选择。</p>
+<h3 id="%E6%AD%A5%E9%95%BF%E9%80%89%E6%8B%A9%E7%AD%96%E7%95%A5">步长选择策略</h3>
+<p>步长选择包括：</p>
+<ul>
+<li><strong>Armijo步长</strong>：通过满足Armijo条件来调整步长，确保每次迭代足够的下降。</li>
+<li><strong>BB步长</strong>：利用Barzilai-Borwein方法来调整步长，特别针对梯度震荡问题进行优化。</li>
+</ul>
+<h3 id="%E6%A0%B8%E5%BF%83%E9%83%A8%E4%BB%B6">核心部件</h3>
+<ul>
+<li><strong>Function 类</strong>：一个抽象基类，定义了函数的基本接口。</li>
+<li><strong>ProximalOperator 类</strong>：一个抽象基类，定义了近邻算子的基本接口。</li>
+<li><strong>LeastSquares 类</strong>：实现最小二乘问题的求解。</li>
+<li><strong>L1NormProx 类</strong>：实现L1范数的近邻算子。</li>
+<li><strong>ProximalGradientOptimizer 类</strong>：实现了近邻梯度方法（PGM）的优化器。</li>
+</ul>
+<h3 id="%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%9C">项目结果：</h3>
+<ul>
+<li><strong>迭代次数</strong></li>
+<li><strong>目标函数值</strong></li>
+<li><strong>计算时间</strong></li>
+</ul>
+<h3 id="%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">目录结构</h3>
+<ul>
+<li><strong>PGM/</strong>
+<ul>
+<li><strong>include/</strong> <em># 包含所有头文件</em>
+<ul>
+<li><code>Function.h</code> <em># Function类定义</em></li>
+<li><code>ProximalOperator.h</code> <em># ProximalOperator类定义</em></li>
+<li><code>LeastSquares.h</code> <em># LeastSquares类定义</em></li>
+<li><code>L1NormProx.h</code> <em># L1NormProx类定义</em></li>
+<li><code>ProximalGradientOptimizer.h</code> <em># ProximalGradientOptimizer类定义</em></li>
+</ul>
+</li>
+<li><strong>src/</strong> <em># 包含所有源代码文件</em>
+<ul>
+<li><code>Function.cpp</code> <em># Function类实现</em></li>
+<li><code>LeastSquares.cpp</code> <em># LeastSquares类实现</em></li>
+<li><code>L1NormProx.cpp</code> <em># L1NormProx类实现</em></li>
+<li><code>ProximalGradientOptimizer.cpp</code> <em># ProximalGradientOptimizer类实现</em></li>
+<li><code>main.cpp</code> <em># 程序入口</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6%E6%8F%8F%E8%BF%B0">核心组件描述</h2>
+<h3 id="function-%E7%B1%BB">Function 类</h3>
+<ul>
+<li><strong>文件位置</strong>：<code>include/Function.h</code> 和 <code>src/Function.cpp</code></li>
+<li><strong>功能描述</strong>：
+<ul>
+<li>抽象基类，定义了函数的接口。</li>
+<li>包含纯虚函数 <code>evaluate</code> 用于计算函数值。</li>
+</ul>
+</li>
+</ul>
+<h3 id="proximaloperator-%E7%B1%BB">ProximalOperator 类</h3>
+<ul>
+<li><strong>文件位置</strong>：<code>include/ProximalOperator.h</code> 和 <code>src/L1NormProx.cpp</code></li>
+<li><strong>功能描述</strong>：
+<ul>
+<li>抽象基类，定义了近邻算子的接口。</li>
+<li>包含函数 <code>apply</code> 用于应用算子。</li>
+</ul>
+</li>
+</ul>
+<h3 id="leastsquares-%E7%B1%BB">LeastSquares 类</h3>
+<ul>
+<li><strong>文件位置</strong>：<code>include/LeastSquares.h</code> 和 <code>src/LeastSquares.cpp</code></li>
+<li><strong>功能描述</strong>：
+<ul>
+<li>继承自 <code>Function</code> 类，实现最小二乘问题的求解。</li>
+</ul>
+</li>
+</ul>
+<h3 id="l1normprox-%E7%B1%BB">L1NormProx 类</h3>
+<ul>
+<li><strong>文件位置</strong>：<code>include/L1NormProx.h</code> 和 <code>src/L1NormProx.cpp</code></li>
+<li><strong>功能描述</strong>：
+<ul>
+<li>继承自 <code>ProximalOperator</code> 类，实现L1范数的近邻算子。</li>
+</ul>
+</li>
+</ul>
+<h3 id="proximalgradientoptimizer-%E7%B1%BB">ProximalGradientOptimizer 类</h3>
+<ul>
+<li><strong>文件位置</strong>：<code>include/ProximalGradientOptimizer.h</code> 和 <code>src/ProximalGradientOptimizer.cpp</code></li>
+<li><strong>功能描述</strong>：
+<ul>
+<li>实现了近邻梯度方法（PGM）的优化器。</li>
+<li>包含方法 <code>optimize</code> 用于执行优化。</li>
+</ul>
+</li>
+</ul>
+<h3 id="main-%E5%87%BD%E6%95%B0">main 函数</h3>
+<ul>
+<li><strong>文件位置</strong>：<code>src/main.cpp</code></li>
+<li><strong>功能描述</strong>：
+<ul>
+<li>创建 <code>LeastSquares</code> 和 <code>L1NormProx</code> 对象。</li>
+<li>使用 <code>ProximalGradientOptimizer</code> 执行优化。</li>
+<li>输出优化结果。</li>
+</ul>
+</li>
+</ul>
+<h1 id="%E7%BB%93%E6%9E%9C%E6%B1%87%E6%80%BB%E5%88%86%E6%9E%90">结果汇总分析</h1>
+<p><strong><span style="color:red;">迭代算法结束巡皇的容忍度设置为1e-3(通过梯度二范数，判断循环结束)</span></strong></p>
+<h2 id="l1%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98armoji%E5%87%86%E5%88%99">L1范数，最小二乘，Armoji准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l1_ls_arm_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+
+</div></code></pre>
+<pre class="hljs"><code><div>g++ -o pgm_l1_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+
+</div></code></pre>
+<h3 id="%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">简单数据算法验证</h3>
+<p>1.参数设置<br>
+<em><strong>矩阵 A：</strong></em>
+矩阵 ( A ) 是一个 2x2 的矩阵，具体值如下：</p>
+<p>$$
+A = \begin{bmatrix}
+1 &amp; 3 \
+2 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>向量 b:
+向量 ( b ) 是一个 2x1 的向量，具体值如下：</p>
+<p>$$
+b = \begin{bmatrix}
+0 \
+2
+\end{bmatrix}
+$$</p>
+<p>初始向量 x:
+初始向量 ( x ) 也是一个 2x1 的向量，用作优化算法的起始点，具体值如下：</p>
+<p>$$
+x = \begin{bmatrix}
+1000 \
+2000
+\end{bmatrix}
+$$</p>
+<p>2.运行结果</p>
+<p><strong><strong>迭代次数 (Iterations):</strong></strong> 75</p>
+<p><strong><strong><strong>目标值 (Objective Value):</strong></strong></strong> 1.5995</p>
+<p><strong><strong><strong>解 (Solution):</strong></strong></strong> [1.1985, -0.3998]</p>
+<p><strong><strong><strong>计算时间 (CPU Time):</strong></strong></strong> 0 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L1_LS_arm_small.png" alt="Example Image">
+收敛速度较快，在70左右达到了容忍度的要求，二范数梯度呈现下降趋势。</p>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 3000</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 194.949</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 10.982 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L1_LS_arm_big.png" alt="Example Image">
+收敛速度很快，但在最后迭代结束都没有达到容忍度要求，二范数梯度呈现下降趋势。</p>
+<h2 id="l1%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98bb%E5%87%86%E5%88%99">L1范数，最小二乘，bb准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l1_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<pre class="hljs"><code><div>g++ -o pgm_l1_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<h3 id="%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">简单数据算法验证</h3>
+<p>1.参数设置<br>
+<em><strong>矩阵 A：</strong></em>
+矩阵 ( A ) 是一个 2x2 的矩阵，具体值如下：</p>
+<p>$$
+A = \begin{bmatrix}
+1 &amp; 3 \
+2 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>向量 b:
+向量 ( b ) 是一个 2x1 的向量，具体值如下：</p>
+<p>$$
+b = \begin{bmatrix}
+0 \
+2
+\end{bmatrix}
+$$</p>
+<p>初始向量 x:
+初始向量 ( x ) 也是一个 2x1 的向量，用作优化算法的起始点，具体值如下：</p>
+<p>$$
+x = \begin{bmatrix}
+1000 \
+2000
+\end{bmatrix}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 7</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 1.5995</p>
+<p><em><strong>解 (Solution):</strong></em> [1.1985, -0.3998]</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 0 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L1_LS_bb_small.png" alt="Example Image">
+收敛速度很快，在第7步左右达到了容忍度的要求，二范数梯度呈现下降趋势。</p>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 3000</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 218.916</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 5.512 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L1_LS_bb_big.png" alt="Example Image">
+收敛速度较慢，但在最后迭代结束都没有达到容忍度要求，二范数梯度呈现下降趋势，优化进行不彻底，可能是步长调整策略存在问题，后续在逻辑回归目标函数中对于BB算法步长调整策略进行修改。</p>
+<table>
+<thead>
+<tr>
+<th>尝试数据</th>
+<th>tk选取</th>
+<th>Iter次数</th>
+<th>min f + g</th>
+<th>CPU_TIME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>small</td>
+<td>Armijo</td>
+<td>76</td>
+<td>1.5995</td>
+<td>0 s</td>
+</tr>
+<tr>
+<td>small</td>
+<td>BB-step</td>
+<td>7</td>
+<td>1.5995</td>
+<td>0 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>Armijo</td>
+<td>3000</td>
+<td>194.949</td>
+<td>10.982 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>BB-step</td>
+<td>3000</td>
+<td>218.916</td>
+<td>5.512 s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l2%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98armoji%E5%87%86%E5%88%99">L2范数，最小二乘，Armoji准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l1_ls_arm_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+
+</div></code></pre>
+<pre class="hljs"><code><div>g++ -o pgm_l1_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+
+</div></code></pre>
+<h3 id="%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">简单数据算法验证</h3>
+<p>1.参数设置<br>
+<em><strong>矩阵 A：</strong></em>
+矩阵 ( A ) 是一个 2x2 的矩阵，具体值如下：</p>
+<p>$$
+A = \begin{bmatrix}
+1 &amp; 3 \
+2 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>向量 b:
+向量 ( b ) 是一个 2x1 的向量，具体值如下：</p>
+<p>$$
+b = \begin{bmatrix}
+0 \
+2
+\end{bmatrix}
+$$</p>
+<p>初始向量 x:
+初始向量 ( x ) 也是一个 2x1 的向量，用作优化算法的起始点，具体值如下：</p>
+<p>$$
+x = \begin{bmatrix}
+1000 \
+2000
+\end{bmatrix}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 76</p>
+<p><em><strong>目标值 (Objective Value):</strong></em>  1.26468</p>
+<p><em><strong>解 (Solution):</strong></em> [1.19982 -0.399799]</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 0.013 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L2_LS_arm_small.png" alt="Example Image">
+小规模问题收敛速度较快，能比较好的收敛。</p>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 3000</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 54.0401</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 11.127 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L2_LS_arm_big.png" alt="Example Image">
+收敛速度较快，性能比较好的收敛。</p>
+<h2 id="l2%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98bb%E5%87%86%E5%88%99">L2范数，最小二乘，bb准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l2_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<pre class="hljs"><code><div>g++ -o pgm_l2_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<h3 id="%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">简单数据算法验证</h3>
+<p>1.参数设置<br>
+<em><strong>矩阵 A：</strong></em>
+矩阵 ( A ) 是一个 2x2 的矩阵，具体值如下：</p>
+<p>$$
+A = \begin{bmatrix}
+1 &amp; 3 \
+2 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>向量 b:
+向量 ( b ) 是一个 2x1 的向量，具体值如下：</p>
+<p>$$
+b = \begin{bmatrix}
+0 \
+2
+\end{bmatrix}
+$$</p>
+<p>初始向量 x:
+初始向量 ( x ) 也是一个 2x1 的向量，用作优化算法的起始点，具体值如下：</p>
+<p>$$
+x = \begin{bmatrix}
+1000 \
+2000
+\end{bmatrix}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 7</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 1.26468</p>
+<p><em><strong>解 (Solution):</strong></em> [ 1.19982 -0.399799]</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 0 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L2_LS_bb_small.png" alt="Example Image">
+小规模问题，收敛速度较快，性能比较好的收敛。</p>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 3000</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 27.1448</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 5.646 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L2_LS_bb_big.png" alt="Example Image">
+出现了震荡的现象，因此在后续逻辑函数中，对于bb策略的步长选择方式进行了调整，解决了这个问题。</p>
+<table>
+<thead>
+<tr>
+<th>尝试数据</th>
+<th>tk选取</th>
+<th>Iter次数</th>
+<th>min f + g</th>
+<th>CPU_TIME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>small</td>
+<td>Armijo</td>
+<td>76</td>
+<td>1.26468</td>
+<td>0.02 s</td>
+</tr>
+<tr>
+<td>small</td>
+<td>BB-step</td>
+<td>7</td>
+<td>1.26468</td>
+<td>0 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>Armijo</td>
+<td>3000</td>
+<td>54.0401</td>
+<td>1.127 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>BB-step</td>
+<td>3000</td>
+<td>27.1448</td>
+<td>5.646 s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l0%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98armoji%E5%87%86%E5%88%99">L0范数，最小二乘，Armoji准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l0_ls_arm_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+
+</div></code></pre>
+<pre class="hljs"><code><div>g++ -o pgm_l0_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+
+</div></code></pre>
+<h3 id="%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">简单数据算法验证</h3>
+<p>1.参数设置<br>
+<em><strong>矩阵 A：</strong></em>
+矩阵 ( A ) 是一个 2x2 的矩阵，具体值如下：</p>
+<p>$$
+A = \begin{bmatrix}
+1 &amp; 3 \
+2 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>向量 b:
+向量 ( b ) 是一个 2x1 的向量，具体值如下：</p>
+<p>$$
+b = \begin{bmatrix}
+0 \
+2
+\end{bmatrix}
+$$</p>
+<p>初始向量 x:
+初始向量 ( x ) 也是一个 2x1 的向量，用作优化算法的起始点，具体值如下：</p>
+<p>$$
+x = \begin{bmatrix}
+1000 \
+2000
+\end{bmatrix}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 75</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 2</p>
+<p><em><strong>解 (Solution):</strong></em> [1.19994 -0.400094]</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 0 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L0_LS_arm_small.png" alt="Example Image">
+在76步的时候收敛，二范数性质较好。</p>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 3000</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 530.192</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 10.961 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L1_LS_arm_big.png" alt="Example Image">
+能够收敛，但是因为问题规模问题在达到3000步的时候还是没有满足容忍度的限制。</p>
+<h2 id="l0%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98bb%E5%87%86%E5%88%99">L0范数，最小二乘，bb准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l2_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<pre class="hljs"><code><div>g++ -o pgm_l2_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<h3 id="%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">简单数据算法验证</h3>
+<p>1.参数设置<br>
+<em><strong>矩阵 A：</strong></em>
+矩阵 ( A ) 是一个 2x2 的矩阵，具体值如下：</p>
+<p>$$
+A = \begin{bmatrix}
+1 &amp; 3 \
+2 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>向量 b:
+向量 ( b ) 是一个 2x1 的向量，具体值如下：</p>
+<p>$$
+b = \begin{bmatrix}
+0 \
+2
+\end{bmatrix}
+$$</p>
+<p>初始向量 x:
+初始向量 ( x ) 也是一个 2x1 的向量，用作优化算法的起始点，具体值如下：</p>
+<p>$$
+x = \begin{bmatrix}
+1000 \
+2000
+\end{bmatrix}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 7</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 2</p>
+<p><em><strong>解 (Solution):</strong></em> [  1.2 -0.4]</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 0 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L0_LS_bb_small.png" alt="Example Image">
+小规模问题，能够收敛，且只用了7步完成收敛。</p>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 3000</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 596.487</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 5.646 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L0_LS_bb_big.png" alt="Example Image">
+由于BB策略的步长选择问题，出现了震荡的现象，后续在逻辑回归函数中解决了这个问题。</p>
+<table>
+<thead>
+<tr>
+<th>尝试数据</th>
+<th>tk选取</th>
+<th>Iter次数</th>
+<th>min f + g</th>
+<th>CPU_TIME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>small</td>
+<td>Armijo</td>
+<td>75</td>
+<td>2</td>
+<td>0.02 s</td>
+</tr>
+<tr>
+<td>small</td>
+<td>BB-step</td>
+<td>7</td>
+<td>2</td>
+<td>0 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>Armijo</td>
+<td>3000</td>
+<td>530.192</td>
+<td>10.961 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>BB-step</td>
+<td>3000</td>
+<td>596.487</td>
+<td>5.646 s</td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:red;">针对使用BB算法求解较大规模问题，梯度二范数出现震荡的问题，通过调整BB策略的步长选择方式解决了这个问题。</span></p>
+<h2 id="%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E9%AA%8C%E8%AF%81">逻辑回归函数的验证</h2>
+<p><span style="color:red;">解决在最小二乘使用bb策略出现的震荡问题。</span></p>
+<h3 id="l1%E8%8C%83%E6%95%B0%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92armoji%E5%87%86%E5%88%99">L1范数，逻辑回归，Armoji准则</h3>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l1_lr_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 374</p>
+<p><em><strong>目标值 (Objective Value):</strong></em>  21.2822</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em>   1.432  秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L1_LR_arm_big.png" alt="Example Image">
+能够平稳的收敛，大致在374步的时候达到容忍度要求，求解实现较长。</p>
+<h2 id="l1%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98bb%E5%87%86%E5%88%99">L1范数，最小二乘，bb准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l1_lr_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em>  90</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 18.4637</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 0.287 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L1_LR_bb_big.png" alt="Example Image">
+能够少许震荡，大致在90步的时候达到容忍度要求，求解时间较短，解决了在最小二乘函数中的震荡问题。</p>
+<table>
+<thead>
+<tr>
+<th>尝试数据</th>
+<th>tk选取</th>
+<th>Iter次数</th>
+<th>min f + g</th>
+<th>CPU_TIME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>big</td>
+<td>Armijo</td>
+<td>374</td>
+<td>21.2822</td>
+<td>1.432 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>BB-step</td>
+<td>90</td>
+<td>18.4637</td>
+<td>0.287 s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l2%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98armoji%E5%87%86%E5%88%99">L2范数，最小二乘，Armoji准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l2_lr_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+
+</div></code></pre>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 463</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 21.2355</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 1.236 秒</p>
+<p>3.算法收敛情况<br>
+<img src="PGM\data_ansys\graph\L2_LR_arm_big.png" alt="Example Image">
+大致在463步的时候达到容忍度要求，求解时间较短，解决了在最小二乘函数中的震荡问题。</p>
+<h2 id="l2%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98bb%E5%87%86%E5%88%99">L2范数，最小二乘，bb准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l2_lr_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 66</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 19.1149</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em>  0.406 秒</p>
+<p>3.算法收敛情况<br>
+<img src="PGM\data_ansys\graph\L2_LR_bb_big.png" alt="Example Image">
+有少许震荡，大致在66步的达到容忍度条件，可能容忍度条件比较小，步长选择没有特别调整，梯度并没有一直下降。</p>
+<table>
+<thead>
+<tr>
+<th>尝试数据</th>
+<th>tk选取</th>
+<th>Iter次数</th>
+<th>min f + g</th>
+<th>CPU_TIME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>big</td>
+<td>Armijo</td>
+<td>463</td>
+<td>21.2355</td>
+<td>1.236 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>BB-step</td>
+<td>66</td>
+<td>19.1149</td>
+<td>0.406 s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l0%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98armoji%E5%87%86%E5%88%99">L0范数，最小二乘，Armoji准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l0_lr_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 514</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 521.83</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em> 1.968 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L0_LR_arm_big.png" alt="Example Image">
+大致在288步的时候达到容忍度要求，求解时间相当于bb算法更长，梯度下降的速度较慢。</p>
+<h2 id="l0%E8%8C%83%E6%95%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98bb%E5%87%86%E5%88%99">L0范数，最小二乘，bb准则</h2>
+<p>编译命令</p>
+<pre class="hljs"><code><div>g++ -o pgm_l0_lr_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+</div></code></pre>
+<h3 id="%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81">随机数据算法验证</h3>
+<p>1.参数设置</p>
+<p>矩阵 ( A ) 是一个大小为 (512 \times 512) 的矩阵，用于存储随机生成的实数值。每个元素 ( A_{i,j} ) 都从一个均匀分布的范围 ([-10, 10]) 中随机选取。矩阵定义如下：</p>
+<p>$$
+A \in \mathbb{R}^{512 \times 512}
+$$</p>
+<p>向量 b:</p>
+<p>向量 ( b ) 是一个长度为 512 的向量，其元素也是从同一均匀分布 ([-10, 10]) 中随机生成的。向量定义如下：</p>
+<p>$$
+b \in \mathbb{R}^{512}
+$$</p>
+<p>初始猜测向量 x:</p>
+<p>初始猜测向量 ( x ) 是一个长度为 512 的向量，初始时所有元素都设置为 0。这个向量用于开始某种优化算法的计算。向量定义如下：</p>
+<p>$$
+x = \begin{bmatrix} 0 \ 0 \ \vdots \ 0 \end{bmatrix} \in \mathbb{R}^{512}
+$$</p>
+<p>2.运行结果</p>
+<p><em><strong>迭代次数 (Iterations):</strong></em> 71</p>
+<p><em><strong>目标值 (Objective Value):</strong></em> 520.331</p>
+<p><em><strong>计算时间 (CPU Time):</strong></em>  0.416 秒</p>
+<p>3.算法收敛情况<br>
+算法收敛情况如下图所示：
+<img src="PGM\data_ansys\graph\L0_LR_bb_big.png" alt="Example Image"></p>
+<table>
+<thead>
+<tr>
+<th>尝试数据</th>
+<th>tk选取</th>
+<th>Iter次数</th>
+<th>min f + g</th>
+<th>CPU_TIME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>big</td>
+<td>Armijo</td>
+<td>514</td>
+<td>521.83</td>
+<td>1.741 s</td>
+</tr>
+<tr>
+<td>big</td>
+<td>BB-step</td>
+<td>71</td>
+<td>520.331</td>
+<td>0.326 s</td>
+</tr>
+</tbody>
+</table>
+<p>大致在71步的时候达到容忍度要求，求解时间较短，但是求解的目标值较大。</p>
+<h1 id="%E6%80%BB%E7%BB%93">总结</h1>
+<h2 id="%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF">项目背景</h2>
+<p>本项目的主要目的是开发一个灵活的优化算法包，用以解决具有复合函数形式的优化问题。复合函数通常表示为 <code>f(x) + h(x)</code>，其中 <code>f(x)</code> 是一个光滑的可微函数，而 <code>h(x)</code> 是一个可能非光滑但易于求解其近邻算子的函数。通过此项目，我们旨在实现并测试几种核心的优化算法，包括基于梯度的方法和基于近邻梯度的方法，同时探索如Armijo步长和Barzilai-Borwein (BB) 步长策略在实际应用中的效果。</p>
+<h2 id="%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E5%92%8C%E5%AE%9E%E7%8E%B0">项目结构和实现</h2>
+<p>项目被组织为以下主要部分：</p>
+<ul>
+<li><strong>算法实现</strong>：包括最小二乘法、L1范数、L2范数、以及L0范数的具体实现。</li>
+<li><strong>步长策略</strong>：实现了两种动态调整步长的策略，Armijo步长策略和BB步长策略。</li>
+<li><strong>逻辑回归与最小二乘问题</strong>：除了传统的最小二乘问题外，还引入了逻辑回归问题作为测试算法性能的另一种方式。</li>
+</ul>
+<h3 id="%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84">代码结构</h3>
+<p>代码分为几个主要模块，存放在不同的文件夹中：</p>
+<ul>
+<li><code>include/</code>：包含所有的头文件，定义了函数和算法的接口。</li>
+<li><code>src/</code>：包含所有的源代码文件，实现了具体的算法逻辑。</li>
+</ul>
+<h3 id="%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD">主要功能</h3>
+<ul>
+<li><strong>Function 类</strong>：用于定义优化问题中的目标函数。</li>
+<li><strong>ProximalOperator 类</strong>：定义了处理含有非光滑项的优化问题所需的近邻算子。</li>
+<li><strong>ProximalGradientOptimizer 类</strong>：实现了基于近邻梯度的优化方法，是项目的核心。</li>
+</ul>
+<h2 id="%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81">测试与验证</h2>
+<p>项目通过多种数据集进行了广泛测试，包括合成数据和真实数据集。测试结果表明，不同的步长选择策略对算法性能有显著影响。特别是在处理大规模数据集时，BB步长策略因其自适应特性表现出较好的性能。</p>
+<h2 id="%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90">结果分析</h2>
+<p>通过对比不同算法和步长策略的性能，我们得出以下结论：</p>
+<ul>
+<li><strong>Armijo步长</strong>：虽然可以保证稳定的收敛，但在某些情况下会因过于保守而导致收敛速度较慢。</li>
+<li><strong>BB步长</strong>：在大多数情况下能够加速收敛，尤其是在梯度具有复杂变化或问题规模较大时。</li>
+</ul>
+<h2 id="%E9%A1%B9%E7%9B%AE%E6%8C%91%E6%88%98">项目挑战</h2>
+<p>项目实施过程中遇到的主要挑战包括算法的参数调整、处理大规模数据的计算效率，以及不同算法在不同类型问题上的适用性分析。同时对于BB算法的参数选择存在一些问题，在某些情况下，由于步长策略选择和容忍度参数设置问题，会出现震荡的情况。</p>
+<h2 id="%E6%80%BB%E4%BD%93%E6%80%BB%E7%BB%93">总体总结</h2>
+<p>本项目成功开发了一个功能完备的优化算法软件包，不仅支持多种优化策略，还提供了强大的灵活性来处理各种优化问题。通过实际数据的广泛测试，我们验证了所提算法的有效性和高效性，为未来的研究和实际应用奠定了坚实的基础。</p>
+
+</body>
+</html>
