@@ -181,11 +181,15 @@ $$
 ## L1范数，最小二乘，Armoji准则
 编译命令
 ```bash
-g++ -o pgm_l1_ls_arm_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l1_ls_arm_small PGM/main.cpp 
+PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 
 ```
 ```bash
-g++ -o pgm_l1_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l1_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 
 ```
 ### 简单数据算法验证  
@@ -278,11 +282,15 @@ $$
 ## L1范数，最小二乘，bb准则
 编译命令
 ```bash
-g++ -o pgm_l1_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l1_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp
+ PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 
 ```bash
-g++ -o pgm_l1_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l1_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp
+ PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 ### 简单数据算法验证  
 1.参数设置  
@@ -381,12 +389,16 @@ $$
 ## L2范数，最小二乘，Armoji准则
 编译命令
 ```bash
-g++ -o pgm_l1_ls_arm_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l1_ls_arm_small PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 
 ```
 
 ```bash
-g++ -o pgm_l1_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l1_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp
+ PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 
 ```
 ### 简单数据算法验证  
@@ -477,11 +489,16 @@ $$
 ## L2范数，最小二乘，bb准则
 编译命令
 ```bash
-g++ -o pgm_l2_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l2_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp
+ PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 
 ```bash
-g++ -o pgm_l2_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l2_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp 
+PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp 
+PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 ### 简单数据算法验证  
 1.参数设置  
@@ -577,12 +594,16 @@ $$
 ## L0范数，最小二乘，Armoji准则
 编译命令
 ```bash
-g++ -o pgm_l0_ls_arm_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l0_ls_arm_small PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp
+ PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 
 ```
 
 ```bash
-g++ -o pgm_l0_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l0_ls_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 
 ```
 ### 简单数据算法验证  
@@ -673,11 +694,15 @@ $$
 ## L0范数，最小二乘，bb准则
 编译命令
 ```bash
-g++ -o pgm_l2_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l2_ls_bb_small PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 
 ```bash
-g++ -o pgm_l2_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l2_ls_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp
+ PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 ### 简单数据算法验证  
 1.参数设置  
@@ -780,7 +805,9 @@ $$
 编译命令
 
 ```bash
-g++ -o pgm_l1_lr_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l1_lr_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 
 
@@ -824,7 +851,9 @@ $$
 ## L1范数，最小二乘，bb准则
 编译命令
 ```bash
-g++ -o pgm_l1_lr_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l1_lr_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 
 
@@ -875,7 +904,9 @@ $$
 
 
 ```bash
-g++ -o pgm_l2_lr_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l2_lr_arm_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 
 ```
 
@@ -922,7 +953,9 @@ $$
 
 
 ```bash
-g++ -o pgm_l2_lr_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
+g++ -o pgm_l2_lr_bb_big PGM/main.cpp PGM/src/LeastSquares.cpp 
+PGM/src/L1NormProx.cpp PGM/src/L2NormProx.cpp PGM/src/L0NormProx.cpp 
+PGM/src/LogisticRegression.cpp PGM/src/ProximalGradientOptimizer.cpp -I PGM/include
 ```
 ### 随机数据算法验证
 1.参数设置  
@@ -1056,7 +1089,9 @@ $$
 | 尝试数据 | tk选取 | Iter次数 | min f + g | CPU_TIME |
 |------------|--------|----------|-----------|----------|
 | big     | Armijo     | 514     | 521.83 | 1.741 s  |
-| big    | BB-step      | 71     | 520.331 | 0.326 s  |  
+| big    | BB-step      | 71     | 520.331 | 0.326 s  |   
+
+
  大致在71步的时候达到容忍度要求，求解时间较短，但是求解的目标值较大。
 
 #  总结
